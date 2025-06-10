@@ -1,0 +1,340 @@
+body {
+    font-family: sans-serif;
+}
+
+:root {
+    /* CSS Змінні для кольорів */
+    --main-bg: #0A0A0A; /* Глибокий, насичений чорний фон сайту */
+    --accent-yellow: #FFD700; /* Чистий, яскравий золотисто-жовтий */
+    --accent-orange: #FFA500; /* Трохи темніший помаранчево-жовтий для контрасту */
+    --text-on-dark: #F0F0F0; /* Світлий текст на темному фоні */
+    --text-on-light: #1A1A1A; /* Темний текст на світлому фоні (наприклад, жовтому) */
+    --shadow-color-dark: rgba(0, 0, 0, 0.8); /* Дуже темна тінь */
+    --shadow-color-gold: rgba(255, 215, 0, 0.5); /* Золотиста тінь для акцентів */
+    --border-dark: #333333; /* Темна рамка */
+}
+
+/* Базові стилі */
+body {
+    font-family: 'Montserrat', sans-serif; /* Використовуємо Montserrat для всього */
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg); /* Основний чорний фон */
+    color: var(--text-on-dark); /* Світлий текст за замовчуванням */
+    line-height: 1.8; /* Збільшений міжрядковий інтервал */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center; /* Центруємо вміст за замовчуванням */
+}
+
+.container {
+    max-width: 1100px; /* Трохи ширший контейнер */
+    margin: 0 auto;
+    padding: 0 25px; /* Більші відступи */
+}
+
+/* Шапка сайту */
+header {
+    background-color: var(--main-bg); /* Чорний фон шапки */
+    color: var(--accent-yellow); /* Жовтий текст шапки */
+    padding: 30px 0; /* Більші відступи */
+    box-shadow: 0 6px 15px var(--shadow-color-dark); /* Виражена тінь */
+    border-bottom: 2px solid var(--accent-orange); /* Оранжево-жовта лінія внизу */
+}
+
+header h1 {
+    font-family: 'Oswald', sans-serif; /* Використовуємо Oswald для головного заголовка */
+    font-weight: 700;
+    font-size: 5.5em; /* Дуже, дуже великий заголовок */
+    text-align: center;
+    margin: 0;
+    letter-spacing: 3px; /* Збільшений інтервал між літерами */
+    text-shadow: 5px 5px 15px var(--shadow-color-dark); /* Глибока тінь */
+    text-transform: uppercase; /* Великі літери */
+}
+
+/* Навігаційне меню */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Великий простір між елементами меню */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--accent-yellow); /* Жовтий колір посилань */
+    font-weight: 600;
+    font-size: 1.3em; /* Більший шрифт меню */
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid var(--accent-yellow); /* Жовта рамка */
+}
+
+nav a:hover, nav a.nronas {
+    color: var(--text-on-light); /* Чорний текст при наведенні/активному */
+    background-color: var(--accent-yellow); /* Жовтий фон при наведенні/активному */
+    transform: translateY(-3px); /* Ефект підняття */
+    box-shadow: 0 5px 15px var(--shadow-color-gold); /* Жовта тінь */
+}
+
+
+
+/* Прибираємо підкреслення для активного пункту, якщо використовуємо фон */
+nav a.active::after {
+    display: none;
+}
+
+
+/* Основний контент */
+main {
+    flex-grow: 1;
+    padding: 60px 0; /* Більші відступи */
+}
+
+.hero-section {
+    padding: 80px 30px; /* Дуже великі відступи */
+    background-color: var(--black-secondary); /* Чорний фон для героя */
+    margin-bottom: 60px;
+    border-radius: 15px; /* Сильне заокруглення */
+    box-shadow: 0 10px 30px var(--shadow-color-dark); /* Глибока тінь */
+    border: 3px solid var(--accent-orange); /* Товста помаранчево-жовта рамка */
+}
+
+.hero-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5.2em; /* Дуже великий заголовок секції */
+    color: var(--accent-yellow); /* Жовтий колір */
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 8px var(--shadow-color-dark);
+    text-transform: uppercase;
+}
+
+.hero-section p {
+    font-size: 1.5em; /* Дуже великий текст */
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    color: var(--text-on-dark); /* Світлий текст на чорному фоні */
+    /* Цей текст буде на чорному фоні, бо батьківський елемент hero-section має чорний фон */
+}
+
+/* Кнопки */
+.button {
+    display: inline-block;
+    padding: 18px 40px; /* Дуже великі кнопки */
+    background-color: var(--accent-yellow); /* Жовтий фон кнопки */
+    color: var(--text-on-light); /* Чорний текст на кнопці */
+    text-decoration: none;
+    border-radius: 10px; /* Сильне заокруглення */
+    font-weight: 700;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px var(--shadow-color-gold); /* Жовта тінь */
+    border: 2px solid var(--accent-orange); /* Оранжево-жовта рамка */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background-color: var(--accent-orange); /* Темніший жовтий при наведенні */
+    transform: translateY(-5px); /* Виражений ефект підняття */
+    box-shadow: 0 10px 25px var(--shadow-color-gold); /* Більш виражена тінь */
+}
+
+/* Секція переваг/пунктів */
+.features-section {
+    padding: 60px 0;
+}
+
+.features-section h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em; /* Дуже великий заголовок секції */
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--accent-yellow);
+    text-shadow: 2px 2px 5px var(--shadow-color-dark);
+    text-transform: uppercase;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Більші мінімальні розміри колонок */
+    gap: 40px; /* Збільшений простір між елементами */
+}
+
+.feature-item {
+    background-color: var(--black-secondary); /* Чорний фон для елементів сітки */
+    padding: 40px; /* Великі відступи всередині */
+    border-radius: 12px; /* Заокруглені кути */
+    box-shadow: 0 8px 20px var(--shadow-color-dark); /* Виражена тінь */
+    text-align: left;
+    border: 2px solid var(--accent-orange); /* Помаранчева рамка */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-8px); /* Сильний ефект підняття */
+    box-shadow: 0 12px 30px var(--shadow-color-dark); /* Глибша тінь при наведенні */
+    border-color: var(--accent-yellow); /* Рамка стає жовтою при наведенні */
+}
+
+.feature-item h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5em; /* Великий заголовок елемента */
+    color: var(--accent-yellow); /* Жовтий колір */
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    text-transform: uppercase;
+}
+
+.feature-item p {
+    font-size: 1.15em; /* Трохи більший текст абзацу */
+    margin-bottom: 30px;
+    color: var(--text-on-dark); /* Світлий текст на чорному фоні */
+    /* Цей текст буде на чорному фоні, бо батьківський елемент feature-item має чорний фон */
+}
+
+.feature-item .button {
+    width: fit-content;
+    padding: 12px 25px; /* Менші кнопки всередині елемента */
+    font-size: 1.1em;
+    box-shadow: 0 4px 10px var(--shadow-color-gold);
+}
+
+.feature-item .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-color-gold);
+}
+
+
+/* Підвал сайту */
+footer {
+    background-color: var(--main-bg); /* Чорний фон підвалу */
+    color: var(--accent-yellow); /* Жовтий текст підвалу */
+    text-align: center;
+    padding: 30px 0;
+    margin-top: auto;
+    box-shadow: 0 -6px 15px var(--shadow-color-dark);
+    border-top: 2px solid var(--accent-orange); /* Оранжево-жовта лінія зверху */
+}
+
+/* --- Стилі для Анімації ЧОРНОГО переходу --- */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* КОЛІР ПЕРЕХОДУ - ЧОРНИЙ */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+    z-index: 9999;
+}
+
+.page-transition.is-active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in, visibility 0s linear 0s;
+}
+
+.image-section {
+    padding: 60px 0;
+    margin-bottom: 60px;
+}
+
+.image-section h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em; /* Великий заголовок для секції зображень */
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--accent-yellow);
+    text-shadow: 2px 2px 5px var(--shadow-color-dark);
+    text-transform: uppercase;
+}
+
+.image-gallery {
+    display: grid;
+    /* Три колонки з автоматичним налаштуванням розміру, мінімум 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Простір між зображеннями */
+    justify-items: center; /* Центруємо елементи по горизонталі */
+    align-items: start; /* Вирівнюємо елементи по верху */
+}
+
+.image-item {
+    background-color: var(--main-bg); /* Чорний фон для кожного елемента зображення */
+    padding: 20px;
+    border-radius: 10px; /* Заокруглені кути */
+    box-shadow: 0 8px 20px var(--shadow-color-dark); /* Глибока тінь */
+    border: 3px solid var(--accent-orange); /* Товста помаранчева рамка */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    width: 100%; /* Займає всю доступну ширину в сітці */
+    max-width: 400px; /* Обмежуємо максимальну ширину кожного елемента */
+    box-sizing: border-box; /* Включаємо padding і border в загальний розмір */
+}
+
+.image-item:hover {
+    transform: translateY(-10px); /* Сильний ефект підняття при наведенні */
+    box-shadow: 0 15px 35px var(--shadow-color-gold); /* Більш виражена золотиста тінь */
+    border-color: var(--accent-yellow); /* Рамка стає жовтою при наведенні */
+}
+
+.image-item img {
+    max-width: 100%; /* Зображення не виходить за межі контейнера */
+    height: auto; /* Зберігаємо пропорції */
+    display: block; /* Видаляємо зайвий простір під зображенням */
+    border-radius: 5px; /* Легке заокруглення кутів самого зображення */
+    border: 1px solid var(--accent-yellow); /* Тонка жовта рамка навколо фото */
+}
+
+.image-caption {
+    font-size: 1.1em;
+    color: var(--accent-yellow); /* Жовтий колір для підпису */
+    margin-top: 15px;
+    font-style: italic;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Стилі для додаткової текстової секції */
+.additional-text-section {
+    padding: 60px 0;
+    margin-bottom: 60px;
+    background-color: var(--main-bg); /* Чорний фон */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color-dark);
+    border: 3px solid var(--accent-orange);
+    text-align: center;
+}
+
+.additional-text-section h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em;
+    color: var(--accent-yellow);
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 5px var(--shadow-color-dark);
+    text-transform: uppercase;
+}
+
+.text-block {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    text-align: justify; /* Вирівнювання тексту по ширині */
+    color: var(--text-on-dark); /* Світлий текст на чорному фоні */
+    font-size: 1.25em; /* Збільшений розмір тексту */
+    line-height: 2; /* Збільшений міжрядковий інтервал для кращої читабельності */
+    padding: 0 20px; /* Відступи по боках всередині текстового блоку */
+}
+
+.additional-text-section .button {
+    margin-top: 20px;
+}
+
+
